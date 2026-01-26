@@ -1,0 +1,26 @@
+{
+  "pages": [
+    {
+      "city": "Korczyna",
+      "citySlug": "korczyna",
+      "service": "Malowanie ścian",
+      "serviceSlug": "malowanie-scian",
+      "content": {
+        "title": "Malowanie ścian w Korczynie — odśwież swoje wnętrze",
+        "intro": "Profesjonalne malowanie ścian w Korczynie i okolicy. Szybko, czysto i precyzyjnie.",
+        "description": "Oferujemy kompleksowe usługi malowania ścian: przygotowanie powierzchni, gruntowanie, aplikację farb oraz wykończenia. Zaufaj doświadczonemu zespołowi, który dba o detale i terminowość."
+      }
+    },
+    {
+      "city": "Korczyna",
+      "citySlug": "korczyna",
+      "service": "Szpachlowanie",
+      "serviceSlug": "szpachlowanie",
+      "content": {
+        "title": "Szpachlowanie ścian w Korczynie — gładkie powierzchnie bez skaz",
+        "intro": "Precyzyjne szpachlowanie ścian w Korczynie i w okolicy. Równe i gotowe pod malowanie.",
+        "description": "Zapewniamy perfekcyjne wygładzenie powierzchni dzięki profesjonalnemu szpachlowaniu: wyrównanie nierówności, wypełnienie ubytków i przygotowanie pod malowanie. Pracujemy szybko, czysto i z dbałością o detale."
+      }
+    }
+  ]
+}

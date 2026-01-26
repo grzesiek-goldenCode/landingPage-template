@@ -37,7 +37,8 @@ export const pl: LandingContent = {
       items: [
         {
           name: "Anna Kowalska",
-          role: "Salon beauty",
+          company: "Pazurki.pl",
+          role: "makijarzystka",
           quote: "Strona zaczęła realnie sprzedawać.",
         },
         {
@@ -54,10 +55,53 @@ export const pl: LandingContent = {
       ],
     },
     {
+      type: "faq",
+      title: "Najczęściej zadawane pytania",
+      items: [
+        {
+          question: "Ile kosztuje landing page?",
+          answer:
+            "Cena zależy od zakresu projektu. Prosty landing zaczyna się od X zł.",
+        },
+        {
+          question: "Jak długo trwa realizacja?",
+          answer: "Standardowy landing page realizuję w 7-14 dni roboczych.",
+        },
+        {
+          question: "Czy mogę później edytować treści?",
+          answer:
+            "Tak, strona jest przygotowana tak, aby łatwo było zmieniać treści.",
+        },
+      ],
+    },
+    {
+      type: "contact",
+      title: "Golden Desing",
+      adress: {
+        city: "Krosno",
+        postalCode: "38-400",
+        street: "Bursaki 29a",
+        googleMapLink:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1085.179618983025!2d21.773627053026235!3d49.691847629569594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473c4f4d7b874691%3A0x1d9e0f106a7a6e17!2sBursaki%2029a%2C%2038-400%20Krosno!5e0!3m2!1spl!2spl!4v1769159781672!5m2!1spl!2spl",
+      },
+      contactData: {
+        postion: "Desing & Develop",
+        name: "Grzesiek",
+        phone: 123456789,
+      },
+      msgText: "Napisz do nas!",
+    },
+
+    {
       type: "cta",
       title: "Gotowy na nową stronę?",
-      subtitle: "Skontaktuj się i postawimy landign w kilka dni",
+      subtitle: "Skontaktuj się i postawimy landing w kilka dni",
       cta: { label: "Napisz do mnie", href: "" },
     },
   ],
 };
+
+export const cities = ["Korczyna"];
+export const services = ["Malowanie ścian", "Szpachlowanie"];
+
+export const contactEmail = "grzesiekcode@gmail.com";

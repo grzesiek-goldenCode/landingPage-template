@@ -84,7 +84,7 @@ export type PricingSection = {
   subtitle?: string;
   plans: {
     name: string;
-    price: string; // np. "999 zł" albo "$49"
+    price: string;
     description?: string;
     features: string[];
     highlighted?: boolean;
@@ -112,6 +112,38 @@ export type LogosSection = {
   }[];
 };
 
+// ===== ABOUT =====
+export type AboutSection = {
+  type: "about";
+  title: string;
+  description: string;
+};
+
+// ===== GALLERY =====
+export type GallerySection = {
+  type: "gallery";
+  // dodać podczas budowy komponentu!
+};
+
+// ===== CONTACT =====
+export type ContactSection = {
+  type: "contact";
+  title: string; //nazwa firmy
+
+  adress: {
+    city: string;
+    postalCode: string;
+    street: string;
+    googleMapLink?: string;
+  };
+  contactData: {
+    postion?: string;
+    name: string;
+    phone: number;
+  };
+  msgText: string;
+};
+
 // ===== FINAL CTA =====
 export type CTASection = {
   type: "cta";
@@ -120,6 +152,26 @@ export type CTASection = {
   cta: {
     label: string;
     href: string;
+  };
+};
+export type CityServiceSection = {
+  type: "cityService";
+  pages: CityService[];
+};
+
+export type ContactForm = {
+  type: "contactForm";
+};
+
+export type CityService = {
+  city: string;
+  citySlug: string;
+  service: string;
+  serviceSlug: string;
+  content: {
+    title: string;
+    intro: string;
+    description: string;
   };
 };
 
@@ -133,7 +185,10 @@ export type LandingSection =
   | PricingSection
   | FAQSection
   | LogosSection
-  | CTASection;
+  | CTASection
+  | CityServiceSection
+  | ContactSection
+  | ContactForm;
 
 // ===== CAŁY LANDING =====
 export type LandingContent = {

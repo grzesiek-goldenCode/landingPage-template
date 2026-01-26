@@ -4,6 +4,10 @@
 @tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
+@theme {
+  --color-main: oklch(98.5% 0 0);
+  --color-sec: oklch(28.633% 0.10227 26.599);
+}
 
 @theme inline {
   --color-background: var(--background);
