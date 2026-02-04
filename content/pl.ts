@@ -32,6 +32,15 @@ export const pl: LandingContent = {
       ],
     },
     {
+      type: "gallery",
+      images: [
+        { source: "/image1.jpg", altText: "Mobile phone image" },
+        { source: "/image2.jpg", altText: "Computer mouse image" },
+        { source: "/image3.jpg", altText: "Game Joystick image" },
+        { source: "/image4.jpg", altText: "Laptop image" },
+      ],
+    },
+    {
       type: "testimonials",
       title: "Opinie klientów",
       items: [

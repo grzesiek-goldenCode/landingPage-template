@@ -10,7 +10,7 @@ import { FAQSection } from "@/content/types";
 
 export function FAQ({ title, items }: FAQSection) {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 ">
       <div className="container mx-auto px-6 max-w-3xl">
         <h2 className="text-3xl font-semibold text-center">{title}</h2>
 

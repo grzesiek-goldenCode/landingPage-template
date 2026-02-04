@@ -120,9 +120,13 @@ export type AboutSection = {
 };
 
 // ===== GALLERY =====
+export type GalleryImage = {
+  src: string;
+  alt: string;
+};
 export type GallerySection = {
   type: "gallery";
-  // dodać podczas budowy komponentu!
+  images: { source: string; altText: string }[];
 };
 
 // ===== CONTACT =====
@@ -188,7 +192,8 @@ export type LandingSection =
   | CTASection
   | CityServiceSection
   | ContactSection
-  | ContactForm;
+  | ContactForm
+  | GallerySection;
 
 // ===== CAŁY LANDING =====
 export type LandingContent = {

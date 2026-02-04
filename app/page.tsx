@@ -7,6 +7,7 @@ import Contact from "@/components/sections/Contact";
 import { getContent } from "@/lib/i18n";
 import Testimonials from "@/components/sections/Testimonials";
 import ContactForm from "@/components/sections/ContactForm";
+import Gallery from "@/components/sections/Gallery";
 
 function renderSection(section: LandingSection, index: number) {
   switch (section.type) {
@@ -14,6 +15,8 @@ function renderSection(section: LandingSection, index: number) {
       return <Hero key={index} {...section} />;
     case "features":
       return <Features key={index} {...section} />;
+    case "gallery":
+      return <Gallery key={index} {...section} />;
     case "testimonials":
       return <Testimonials key={index} {...section} />;
     case "faq":
