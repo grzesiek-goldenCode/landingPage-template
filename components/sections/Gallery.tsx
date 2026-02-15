@@ -26,7 +26,10 @@ export default function Gallery(
     setIndex((prev) => (prev + 1) % images.length);
   }
   return (
-    <div className=" overflow-hidden transition-opacity duration-200 h-150 flex justify-center mx-auto w-[80vw]">
+    <div
+      id="gallery"
+      className="relative overflow-hidden transition-opacity duration-200 h-150 flex justify-center mx-auto w-[80vw]"
+    >
       <button className={` ml-0 px-2 transition `} onClick={prevImage}>
         <ChevronLeft size={48} />
       </button>

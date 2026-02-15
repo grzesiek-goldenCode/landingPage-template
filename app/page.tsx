@@ -8,6 +8,8 @@ import { getContent } from "@/lib/i18n";
 import Testimonials from "@/components/sections/Testimonials";
 import ContactForm from "@/components/sections/ContactForm";
 import Gallery from "@/components/sections/Gallery";
+import GalleryGrid from "@/components/sections/GalleryGrid";
+import About from "@/components/sections/About";
 
 function renderSection(section: LandingSection, index: number) {
   switch (section.type) {
@@ -15,8 +17,10 @@ function renderSection(section: LandingSection, index: number) {
       return <Hero key={index} {...section} />;
     case "features":
       return <Features key={index} {...section} />;
+    case "about":
+      return <About key={index} {...section} />;
     case "gallery":
-      return <Gallery key={index} {...section} />;
+      return <GalleryGrid key={index} {...section} />;
     case "testimonials":
       return <Testimonials key={index} {...section} />;
     case "faq":
@@ -41,8 +45,8 @@ export default async function Home({
   const content = getContent(params.lang ?? "pl");
 
   return (
-    <main className="min-h-screen bg-(--color-main) text-neutral-900">
+    <div className=" bg-(--color-main) text-neutral-900">
       {content.sections.map((section, index) => renderSection(section, index))}
-    </main>
+    </div>
   );
 }

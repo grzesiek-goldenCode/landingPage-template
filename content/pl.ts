@@ -32,6 +32,15 @@ export const pl: LandingContent = {
       ],
     },
     {
+      type: "about",
+      title: "Pasja, Precyzja i Trwałość w Każdym Detalu",
+      description: `Specjalizuję się w profesjonalnym układaniu płytek od ponad
+              dekady. Moje podejście łączy rzemieślniczą tradycję z nowoczesnymi
+              technologiami wykończenia wnętrz. Każde zlecenie traktuję
+              indywidualnie, dbając o estetykę, funkcjonalność oraz czystość na
+              każdym etapie prac.`,
+    },
+    {
       type: "gallery",
       images: [
         { source: "/image1.jpg", altText: "Mobile phone image" },

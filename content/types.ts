@@ -193,7 +193,8 @@ export type LandingSection =
   | CityServiceSection
   | ContactSection
   | ContactForm
-  | GallerySection;
+  | GallerySection
+  | AboutSection;
 
 // ===== CAŁY LANDING =====
 export type LandingContent = {

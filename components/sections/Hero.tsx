@@ -19,10 +19,15 @@ export default function Hero({
   ctaSecondary,
 }: HeroSection) {
   return (
-    <section className="container mx-auto px-6 py-24 grid gap-12 md:grid-cols-2 items-center">
+    <section
+      className="relative md:h-[75vh] container mx-auto px-6 pt-24 md:pb-36 md:mb-10
+       grid gap-12 md:grid-cols-2 items-center"
+      id="hero"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
+        className="mb-20"
       >
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
           {title}
@@ -38,7 +43,7 @@ export default function Hero({
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white rounded-2xl shadow-xl p-6"
+        className="bg-white rounded-2xl shadow-xl p-6 mb-20"
       >
         <div className="h-64 rounded-xl bg-neutral-100 flex items-center justify-center">
           <span className="text-neutral-400">Mockup / screenshot</span>
