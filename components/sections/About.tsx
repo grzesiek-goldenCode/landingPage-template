@@ -26,9 +26,7 @@ export default function About({ title, description }: AboutSection) {
             </div>
           </div>
           <div className="lg:w-1/2 px-10">
-            <h2 className="text-primary font-700 uppercase tracking-widest text-sm mb-4">
-              O mnie
-            </h2>
+            <h2 className="section-header  mb-4">O mnie</h2>
             <h3 className="text-4xl font-800 mb-6 text-slate dark:text-white leading-tight">
               {title}
             </h3>

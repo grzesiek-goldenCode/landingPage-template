@@ -29,28 +29,42 @@ export default function ContactForm() {
   return (
     <form
       action={handleSubmit}
-      className="flex flex-col justify-center items-center w-full lg:w-[80%] px-10 lg:px-30 mx-auto mt-10 mb-30"
+      className="flex flex-col justify-center items-center w-full  mx-auto mt-10 mb-20 px-40"
     >
       <FormField
         name="name"
         type="text"
-        placeholder="Imię i Nazwisko"
+        label="IMIĘ I NAZWISKO"
+        placeholder="Jan Kowalski"
         error={state?.errors?.name?.[0]}
         maxLength={30}
         required
       />
-      <FormField
-        name="email"
-        type="text"
-        placeholder="Twój adres email"
-        error={state?.errors?.email?.[0]}
-        maxLength={100}
-        required
-      />
+      <div className="flex gap-5 w-full">
+        <FormField
+          name="phone"
+          type="tel"
+          label="NUMER TELEFONU"
+          placeholder="Numer telefonu"
+          error={state?.errors?.name?.[0]}
+          maxLength={30}
+          required
+        />
+        <FormField
+          name="email"
+          type="text"
+          label="adres email"
+          placeholder="Twój adres email"
+          error={state?.errors?.email?.[0]}
+          maxLength={100}
+          required
+        />
+      </div>
       <FormField
         name="text"
         type="textarea"
-        placeholder="Wpisz swoją wiadomość"
+        label="twoja wiadomość"
+        placeholder="Podaj szczegóły do wyceny - metraż, zakres prac, rodzaj płytek"
         error={state?.errors?.message?.[0]}
         required
       />
@@ -58,7 +72,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="bg-gray-400 text-white px-6 py-3 rounded mt-2 disabled:opacity-50 hover:bg-gray-600 hover:shadow-2xl"
+        className="bg-skyblue text-white px-6 py-3 rounded mt-2 disabled:opacity-50 hover:bg-blue-700 hover:shadow-2xl"
       >
         {pending ? "Wysyłanie..." : "Wyślij wiadomość"}
       </button>

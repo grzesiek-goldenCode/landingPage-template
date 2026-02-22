@@ -1,4 +1,10 @@
 import { LandingContent } from "./types";
+import {
+  MdOutlinePhotoSizeSelectLarge,
+  MdBathtub,
+  MdHouse,
+  MdArrowForward,
+} from "react-icons/md";
 
 export const pl: LandingContent = {
   sections: [
@@ -41,34 +47,96 @@ export const pl: LandingContent = {
               każdym etapie prac.`,
     },
     {
+      type: "services",
+      mainHeader:
+        "Oferujemy kompleksowe rozwiązania dla domów, mieszkań oraz obiektów komercyjnych.",
+      cards: [
+        {
+          title: "Płytki Wielkoformatowe",
+          description:
+            "Precyzyjny montaż spieków kwarcowych i płyt XXL (nawet 120x240cm) z zachowaniem najwyższych standardów bezpieczeństwa i estetyki.",
+          icon: MdOutlinePhotoSizeSelectLarge,
+        },
+        {
+          title: "Łazienki Kompleksowo",
+          description:
+            "Od hydroizolacji po montaż armatury. Tworzymy przestrzenie, któresą nie tylko piękne, ale i całkowicie wodoszczelne na lata.",
+          icon: MdBathtub,
+        },
+        {
+          title: "Kuchnie i Salony",
+          description:
+            "Układanie gresu, terakoty i mozaiki na dużych powierzchniach.Idealnie równe spoiny i wzory dopasowane do charakteru wnętrza.",
+          icon: MdHouse,
+        },
+      ],
+    },
+
+    {
+      type: "whyus",
+      header: "Standard wykonania który przewyższa oczekiwania",
+      content: [
+        {
+          title: "Precyzja lasera",
+          description:
+            "Używamy najwyższej klasy poziomnic laserowych i narzędzi tnących aby zagwarantować idealne linie i płaszczyzny",
+        },
+        {
+          title: "Czystość i Porządek",
+          description:
+            "Pracujemy z systemami odsysania pyłu i zabezpieczamy resztę mieszkania podczas remontu",
+        },
+        {
+          title: "Doradztwo Techniczne",
+          description:
+            "Pomagamy w doborze klejów, fug i systemów hydroizolacji dopasowanych do konkretnych płytek",
+        },
+      ],
+    },
+    {
       type: "gallery",
       images: [
-        { source: "/image1.jpg", altText: "Mobile phone image" },
-        { source: "/image2.jpg", altText: "Computer mouse image" },
+        {
+          source: "/image1.jpg",
+          altText: "Mobile phone image",
+          title: "Warszawa",
+          description: "Łazienka w spiekach kwarcowych",
+        },
+        {
+          source: "/image2.jpg",
+          altText: "Computer mouse image",
+          title: "Kraków",
+          description: "Kuchnia w stylu Loft",
+        },
         { source: "/image3.jpg", altText: "Game Joystick image" },
         { source: "/image4.jpg", altText: "Laptop image" },
+        { source: "/lazienka1.jpg", altText: "Laptop image" },
+        { source: "/lazienka2.jpg", altText: "Laptop image" },
+        { source: "/lazienka3.jpg", altText: "Laptop image" },
       ],
     },
     {
       type: "testimonials",
-      title: "Opinie klientów",
+      title: "Co mówią o naszej pracy",
       items: [
         {
-          name: "Anna Kowalska",
-          company: "Pazurki.pl",
-          role: "makijarzystka",
-          quote: "Strona zaczęła realnie sprzedawać.",
-        },
-        {
-          name: "Jan Nowak",
-          role: "Hydraulik",
-          quote: "Znajdują mnie klienci z wszystkich okolicznych miast!",
-        },
-        {
-          name: "Edward",
-          role: "Nauczyciel Angielskiego",
+          name: "Marek Jankowski",
+
+          role: "Właściciel Domu w Ząbkach",
           quote:
-            "Szybka i skalowalna strona która dobrze wyszukuje się w Google",
+            "Pan Tomasz to prawdziwy profesjonalista. Płytki w salonie ułożone idealnie, nawet przy bardzo trudnym wzorze. Bardzo czysty i kulturalny fachowiec.",
+        },
+        {
+          name: "Anna Kowalska",
+          role: "Mieszkanie na Mokotowie",
+          quote:
+            "Rewelacyjny kontakt i świetne doradztwo. Dzięki podpowiedziom Pana Tomasza uniknęliśmy błędów w projekcie łazienki. Polecam każdemu!",
+        },
+        {
+          name: "Robert Wiśniewski",
+          role: "Apartamenty przy Wilanowie",
+          quote:
+            "Precyzja wykonania spoin i szlifów pod kątem 45 stopni robi wrażenie. Termin dotrzymany co do dnia. Bardzo polecam.",
         },
       ],
     },

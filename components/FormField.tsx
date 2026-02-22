@@ -2,12 +2,14 @@
 
 export default function FormField({ name, label, type, error, ...props }: any) {
   return (
-    <div className="w-[50%] ">
-      <label className="block text-sm font-medium mb-1">{label}</label>
+    <div className="w-full mb-3">
+      <label className="block text-sm font-700 tracking-wide uppercase  mb-1 mx-2">
+        {label}
+      </label>
       {type === "textarea" ? (
         <textarea
           name={name}
-          className={`w-full p-3 mx-2 border rounded-lg h-64 focus:border-black ${
+          className={`w-full p-3  border rounded-lg h-64 focus:border-black ${
             error ? "border-red-500" : "border-gray-300"
           }`}
           {...props}
@@ -16,7 +18,7 @@ export default function FormField({ name, label, type, error, ...props }: any) {
         <input
           type={type}
           name={name}
-          className={`border p-3 mx-2 rounded-lg  focus:border-black w-full resize-none mb-1 ${
+          className={`border p-3  rounded-lg  focus:border-black w-full resize-none mb-1 ${
             error ? "border-red-500" : "border-gray-300"
           }`}
           {...props}

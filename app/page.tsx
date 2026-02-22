@@ -11,14 +11,21 @@ import Gallery from "@/components/sections/Gallery";
 import GalleryGrid from "@/components/sections/GalleryGrid";
 import About from "@/components/sections/About";
 
+import WhyUs from "@/components/sections/WhyUs";
+import Services from "@/components/sections/Services";
+
 function renderSection(section: LandingSection, index: number) {
   switch (section.type) {
     case "hero":
       return <Hero key={index} {...section} />;
     case "features":
       return <Features key={index} {...section} />;
+    case "services":
+      return <Services key={index} {...section} />;
     case "about":
       return <About key={index} {...section} />;
+    case "whyus":
+      return <WhyUs key={index} {...section} />;
     case "gallery":
       return <GalleryGrid key={index} {...section} />;
     case "testimonials":
@@ -27,10 +34,7 @@ function renderSection(section: LandingSection, index: number) {
       return <FAQ key={index} {...section} />;
     case "contact":
       return <Contact key={index} {...section} />;
-    case "cta":
-      return <CTA key={index} {...section} />;
-    case "contactForm":
-      return <ContactForm key={index} />;
+
     default:
       return null;
   }

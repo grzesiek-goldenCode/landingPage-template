@@ -15,7 +15,7 @@
 //     button: string;
 //   };
 // };
-
+import { IconType } from "react-icons";
 export type Locale = "pl" | "en";
 // ===== HERO =====
 export type HeroSection = {
@@ -126,7 +126,12 @@ export type GalleryImage = {
 };
 export type GallerySection = {
   type: "gallery";
-  images: { source: string; altText: string }[];
+  images: {
+    source: string;
+    altText: string;
+    title?: string;
+    description?: string;
+  }[];
 };
 
 // ===== CONTACT =====
@@ -179,6 +184,22 @@ export type CityService = {
   };
 };
 
+export type WhyUsSection = {
+  type: "whyus";
+  header: string;
+  content: { title: string; description: string }[];
+};
+
+export type ServicesSection = {
+  type: "services";
+  mainHeader: string;
+  cards: {
+    title: string;
+    description: string;
+    icon: IconType;
+  }[];
+};
+
 // ===== UNION WSZYSTKICH SEKCJI =====
 export type LandingSection =
   | HeroSection
@@ -194,7 +215,9 @@ export type LandingSection =
   | ContactSection
   | ContactForm
   | GallerySection
-  | AboutSection;
+  | AboutSection
+  | WhyUsSection
+  | ServicesSection;
 
 // ===== CAŁY LANDING =====
 export type LandingContent = {

@@ -4,18 +4,43 @@ import { GallerySection } from "@/content/types";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import GalleryGridItem from "../GalleryIGridItem";
 
-// ToDo
-// Automatyczne przesuwanie obrazkow
-// opisy do obrazkow z pliku z testami
-// przekazywanie danych do komponentu gallerygriditem jako obiekt
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function GalleryGrid(
   { images }: GallerySection,
   autoplayDelay: number = 3000,
 ) {
   const [index, setIndex] = useState<number>(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    const preloadImages = async () => {
+      const promises = images.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new window.Image();
+          img.src = src.source;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+
+      try {
+        await Promise.all(promises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error("Failed to preload images:", error);
+        setImagesLoaded(true); // Kontynuuj mimo błędu
+      }
+    };
+
+    preloadImages();
+  }, [images]);
+
+  useEffect(() => {
+    if (!imagesLoaded) return;
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,56 +49,102 @@ export default function GalleryGrid(
     return () => clearInterval(interval);
   }, [images.length, autoplayDelay, index]);
 
-  function prevImage() {
-    setIndex((prev) => (prev - 1 + images.length) % images.length);
-  }
+  const getImageIndex = (offset: number) => {
+    return (index + offset) % images.length;
+  };
 
-  function nextImage() {
-    setIndex((prev) => (prev + 1) % images.length);
-  }
+  const variants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 100 : -100,
+      opacity: 0,
+      scale: 0.8,
+      filter: "blur(10px)",
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      filter: "blur(0px)",
+    },
+    exit: (direction: number) => ({
+      x: direction > 0 ? -100 : 100,
+      opacity: 0,
+      scale: 0.8,
+      filter: "blur(10px)",
+    }),
+  };
   return (
     <div
       id="gallery"
-      className="relative  transition-opacity duration-200 flex flex-col justify-center mx-auto mt-10  mb-20 pb-10 w-[80vw]"
+      className="relative flex flex-col justify-center mx-auto mt-10  mb-20 pb-10 w-[80vw]"
     >
       <div className="flex flex-col p-2 py-10 mt-5">
-        <h2 className="text-xl text-blue-500">GALERIA PROJEKTÓW</h2>
+        <h2 className="section-header">GALERIA PROJEKTÓW</h2>
         <h3 className="text-4xl ">Nasze Realizacje Premium</h3>
       </div>
-      <div className="grid lg:grid-cols-3 gap-5">
-        <GalleryGridItem
-          source={images[0].source}
-          altText={images[0].altText}
-        />
-        <GalleryGridItem
-          source={images[1].source}
-          altText={images[1].altText}
-        />
-        <GalleryGridItem
-          source={images[2].source}
-          altText={images[2].altText}
-        />
+      <div className="grid lg:grid-cols-3 gap-5 ">
+        {[0, 1, 2].map((offset, i) => (
+          <div
+            key={i}
+            className="aspect-square overflow-hidden rounded-lg relative bg-gray-200"
+          >
+            <AnimatePresence initial={false} custom={direction}>
+              <motion.div
+                key={getImageIndex(offset)}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 200, damping: 25 },
+                  opacity: { duration: 0.3 },
+                  scale: { duration: 0.3 },
+                  filter: { duration: 0.25 },
+                  delay: i * 0.06, // Staggered
+                }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={images[getImageIndex(offset)].source}
+                  alt={`Slide ${i + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                  quality={75}
+                  priority={i === 0}
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
-//  <button className={` ml-0 px-2 transition `} onClick={prevImage}>
-//         <ChevronLeft size={48} />
-//       </button>
-
-// 	  <button className={`mr-0 px-2 transition `} onClick={nextImage}>
-//         <ChevronRight size={48} />
-//       </button>
-
-// 	   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 transition-transform duration-200">
-//         {images.map((_, i) => (
-//           <button
-//             key={i}
-//             onClick={() => setIndex(i)}
-//             className={`w-2 h-2 rounded-full transition ${
-//               i === index ? "bg-white w-6" : "bg-white/50"
-//             }`}
-//           />
+// {[0, 1, 2].map((offset, i) => (
+//           <motion.div
+//             key={`${index}-${offset}`}
+//             initial={{ opacity: 0, y: 20, scale: 0.9 }}
+//             animate={{ opacity: 1, y: 0, scale: 1 }}
+//             exit={{ opacity: 0, scale: 0.9 }}
+//             transition={{
+//               duration: 0.5,
+//               delay: i * 0.15,
+//               ease: "easeOut",
+//             }}
+//             className="aspect-square overflow-hidden rounded-lg"
+//           >
+//             <Image
+//               src={images[getImageIndex(offset)].source}
+//               alt={images[i + 1].altText}
+//               fill
+//               className=" fill animate-slide-in"
+//             />
+//           </motion.div>
 //         ))}
-//       </div>
+
+//  <GalleryGridItem imageData={images[getImageIndex(1)]} />
+//         <GalleryGridItem imageData={images[getImageIndex(2)]} />
+//         <GalleryGridItem imageData={images[getImageIndex(3)]} />
