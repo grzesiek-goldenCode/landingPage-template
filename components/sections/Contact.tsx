@@ -16,7 +16,7 @@ export default function Contact({
   msgText,
 }: ContactSection) {
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white py-10" id="contact">
       <div className="flex flex-col lg:flex-row justify-center w-[80%] mx-auto my-10 rounded-2xl overflow-hidden bg-light">
         <div className=" w-3/5">
           <h3 className="text-3xl my-10 mb-15 px-30 leading-tight">

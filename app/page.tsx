@@ -13,6 +13,7 @@ import About from "@/components/sections/About";
 
 import WhyUs from "@/components/sections/WhyUs";
 import Services from "@/components/sections/Services";
+import { AIChat } from "@/components/sections/AiChat";
 
 function renderSection(section: LandingSection, index: number) {
   switch (section.type) {
@@ -50,6 +51,7 @@ export default async function Home({
 
   return (
     <div className=" bg-(--color-main) text-neutral-900">
+      <AIChat />
       {content.sections.map((section, index) => renderSection(section, index))}
     </div>
   );

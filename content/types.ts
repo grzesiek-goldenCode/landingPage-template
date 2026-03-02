@@ -200,6 +200,16 @@ export type ServicesSection = {
   }[];
 };
 
+export type AiChatbot = {
+  companyContext: {
+    name: string;
+    industry: string;
+    services: string[];
+    areas: string[];
+    prices: { service: string; price: number; priceUnit?: "m2" | "sztuka" }[];
+  };
+};
+
 // ===== UNION WSZYSTKICH SEKCJI =====
 export type LandingSection =
   | HeroSection

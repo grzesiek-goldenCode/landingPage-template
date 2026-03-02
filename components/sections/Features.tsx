@@ -1,13 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { BadgeCheck, ShieldHalf, Timer } from "lucide-react";
 import { FeaturesSection } from "@/content/types";
+
+// todo:
+// ikony z react icons zamiast lucide żeby zachować spójność z resztą strony
+
 export default function Features({ title, items }: FeaturesSection) {
   return (
     <div className="relative  mx-auto w-[80%] bg-white p-4 rounded-xl shadow-2xl lg:z-10 lg:-mt-32 ">
-      <div className="grid gap-8 lg:grid-cols-3">
+      <div className="grid gap-8 lg:grid-cols-3 items-center">
         <Card>
           <CardContent className="p-3 flex gap-6 items-center justify-center">
-            <BadgeCheck className="text-blue-600 bg-blue-100 p-2 rounded-full text-2xl h-10 w-10" />
+            <div className="text-blue-600 bg-blue-100 p-2 rounded-full text-2xl h-10 w-10">
+              <BadgeCheck className="text-blue-600" />
+            </div>
             <div>
               <p className="text-md font-semibold">{items[0].title}</p>
               <p className="text-sm text-gray-500">{items[0].description}</p>
@@ -16,7 +22,9 @@ export default function Features({ title, items }: FeaturesSection) {
         </Card>
         <Card className=" lg:border-x border-dotted px-10">
           <CardContent className="p-3 flex gap-6 items-center justify-center">
-            <ShieldHalf className="text-blue-600 bg-blue-100 p-2 rounded-full text-2xl h-10 w-10" />
+            <div className=" bg-blue-100 p-2 rounded-full text-2xl h-10 w-10">
+              <ShieldHalf className="text-blue-600 " />
+            </div>
             <div>
               <p className="text-md font-semibold">{items[1].title}</p>
               <p className="text-sm text-gray-500">{items[1].description}</p>
@@ -25,7 +33,9 @@ export default function Features({ title, items }: FeaturesSection) {
         </Card>
         <Card>
           <CardContent className="p-3 flex gap-6 items-center justify-center">
-            <Timer className="text-blue-600 bg-blue-100 p-2 rounded-full text-2xl h-10 w-10" />
+            <div className=" bg-blue-100 p-2 rounded-full text-2xl h-10 w-10">
+              <Timer className="text-blue-600 " />
+            </div>
             <div>
               <p className="text-md font-semibold">{items[2].title}</p>
               <p className="text-sm text-gray-500">{items[2].description}</p>

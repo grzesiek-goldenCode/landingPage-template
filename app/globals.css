@@ -156,3 +156,57 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes border-sweep {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  25% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(100% 100%, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-shift {
+  background-size: 100% 100%;
+}
+
+.gradient-shift:hover {
+  background-size: 200% 200%;
+  animation: gradient-shift 2s ease infinite;
+}
+
+.compensate-bold {
+  letter-spacing: 0.02em;
+}
+
+.compensate-bold:hover {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.text-shadow-bold:hover {
+  text-shadow:
+    0 0 0.5px currentColor,
+    0 0 0.5px currentColor;
+}

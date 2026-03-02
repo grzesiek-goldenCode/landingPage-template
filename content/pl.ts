@@ -191,3 +191,37 @@ export const cities = ["Korczyna"];
 export const services = ["Malowanie ścian", "Szpachlowanie"];
 
 export const contactEmail = "grzesiekcode@gmail.com";
+
+export const companyContext = {
+  name: "glazuMaster",
+  industry: "Usługi remontowo-wykończeniowe",
+  services: [
+    "Układanie płytek ceramicznych",
+    "Układanie gresu",
+    "Układanie gresu wielkoformatowego",
+    "Układanie mozaiki",
+    "Hydroizolacja łazienek",
+    "Wyrównywanie podłoża",
+    "Skucie starych płytek",
+    "Szpachlowanie i przygotowanie ścian pod płytki",
+  ],
+  areas: ["Warszawa", "Piaseczno", "Pruszków", "Otwock", "Wołomin"],
+  prices: [
+    { service: "Układanie płytek ceramicznych", price: 130, priceUnit: "m2" },
+    { service: "Układanie gresu", price: 150, priceUnit: "m2" },
+    {
+      service: "Układanie gresu wielkoformatowego",
+      price: 190,
+      priceUnit: "m2",
+    },
+    { service: "Układanie mozaiki", price: 210, priceUnit: "m2" },
+    { service: "Hydroizolacja łazienek", price: 60 },
+    { service: "Wyrównywanie podłoża", price: 55 },
+    { service: "Skucie starych płytek", price: 50, priceUnit: "m2" },
+    {
+      service: "Szpachlowanie i przygotowanie ścian pod płytki",
+      price: 45,
+      priceUnit: "m2",
+    },
+  ],
+};
