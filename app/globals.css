@@ -196,17 +196,6 @@ html {
   animation: gradient-shift 2s ease infinite;
 }
 
-.compensate-bold {
-  letter-spacing: 0.02em;
-}
-
-.compensate-bold:hover {
-  font-weight: 600;
-  letter-spacing: 0;
-}
-
-.text-shadow-bold:hover {
-  text-shadow:
-    0 0 0.5px currentColor,
-    0 0 0.5px currentColor;
+.header-link {
+  @apply hover:text-gray-800 hover:[text-shadow:0_0_0.5px_currentColor,0_0_0.5px_currentColor];
 }

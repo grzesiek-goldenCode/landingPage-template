@@ -7,7 +7,7 @@ import { FeaturesSection } from "@/content/types";
 
 export default function Features({ title, items }: FeaturesSection) {
   return (
-    <div className="relative  mx-auto w-[80%] bg-white p-4 rounded-xl shadow-2xl lg:z-10 lg:-mt-32 ">
+    <div className="relative  mx-auto w-[80%] bg-white p-4 rounded-xl shadow-2xl lg:z-10 lg:-mt-32 my-10 lg:my-0">
       <div className="grid gap-8 lg:grid-cols-3 items-center">
         <Card>
           <CardContent className="p-3 flex gap-6 items-center justify-center">

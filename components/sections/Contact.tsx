@@ -18,13 +18,13 @@ export default function Contact({
   return (
     <section className="bg-white py-10" id="contact">
       <div className="flex flex-col lg:flex-row justify-center w-[80%] mx-auto my-10 rounded-2xl overflow-hidden bg-light">
-        <div className=" w-3/5">
+        <div className=" lg:w-3/5">
           <h3 className="text-3xl my-10 mb-15 px-30 leading-tight">
             Zapytaj o wycenę
           </h3>
           <ContactForm />
         </div>
-        <div className="bg-custom w-2/5">
+        <div className="bg-custom lg:w-2/5 pb-10">
           <h3 className="text-3xl text-white  my-10 mb-15 px-20 leading-tight">
             Dane Kontaktowe
           </h3>

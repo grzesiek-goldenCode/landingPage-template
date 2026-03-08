@@ -11,28 +11,16 @@ export default function Header() {
           </span>
         </div>
         <div className="flex items-center justify-end gap-5 lg:w-2/3 my-1">
-          <a
-            href="#o-mnie"
-            className=" hover:text-gray-800 hover:[text-shadow:0_0_0.5px_currentColor,0_0_0.5px_currentColor]"
-          >
+          <a href="#o-mnie" className=" header-link">
             O mnie
           </a>
-          <a
-            href="#services"
-            className=" hover:text-gray-800 hover:[text-shadow:0_0_0.5px_currentColor,0_0_0.5px_currentColor]"
-          >
+          <a href="#services" className=" header-link">
             Usługi
           </a>
-          <a
-            href="#gallery"
-            className=" hover:text-gray-800 hover:[text-shadow:0_0_0.5px_currentColor,0_0_0.5px_currentColor]"
-          >
+          <a href="#gallery" className=" header-link">
             Galeria
           </a>
-          <a
-            href="#contact"
-            className=" hover:text-gray-800 hover:[text-shadow:0_0_0.5px_currentColor,0_0_0.5px_currentColor]"
-          >
+          <a href="#contact" className=" header-link">
             Kontakt
           </a>
           <button className="bg-skyblue text-white px-6 py-2 rounded  disabled:opacity-50 hover:bg-blue-700 hover:shadow-2xl flex items-center justify-center  group">

@@ -7,6 +7,13 @@ import { useEffect, useState } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
+// ToDo
+// Przemyśleć optymalizację mobile view, czy renderowanie tego i tego z atrybutem hidden to najlepsza opcja!!
+
+// Dodać sterowanie obrazkami w galerii przy mobile view
+
+// Dodać modal przy kliknięciu w obrazek
+
 export default function GalleryGrid(
   { images }: GallerySection,
   autoplayDelay: number = 3000,
@@ -82,7 +89,24 @@ export default function GalleryGrid(
         <h2 className="section-header">GALERIA PROJEKTÓW</h2>
         <h3 className="text-4xl ">Nasze Realizacje Premium</h3>
       </div>
-      <div className="grid lg:grid-cols-3 gap-5 ">
+
+      <div className="grid lg:hidden gap-5 ">
+        <div className="aspect-square overflow-hidden rounded-lg relative bg-gray-200 transform transition-transform duration-300 animate-accordion-down">
+          {images.map((image, i) => (
+            <Image
+              key={i}
+              src={image.source}
+              alt={`Slide `}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className={`object-cover transition-opacity duartion-300 ${i === index ? "opacity-100" : "opacity-0"}`}
+              quality={75}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="hidden lg:grid lg:grid-cols-3 gap-5 ">
         {[0, 1, 2].map((offset, i) => (
           <div
             key={i}

@@ -29,7 +29,7 @@ export default function ContactForm() {
   return (
     <form
       action={handleSubmit}
-      className="flex flex-col justify-center items-center w-full  mx-auto mt-10 mb-20 px-40"
+      className="flex flex-col justify-center items-center w-full  mx-auto mt-10 mb-20 px-5 lg:px-40"
     >
       <FormField
         name="name"
